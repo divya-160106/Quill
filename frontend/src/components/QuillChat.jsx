@@ -36,7 +36,7 @@ function QuillChat() {
     try{
 
       const response = await fetch(
-        "http://localhost:8000/chat",
+        `${API_URL}/chat`,
         {
           method:"POST",
           headers:{
