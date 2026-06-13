@@ -17,7 +17,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173",
-        "https://quill-aiagent.vercel.app/"],
+        "https://quill-aiagent.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"]
