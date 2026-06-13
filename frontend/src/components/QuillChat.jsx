@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./../styles/QuillChat.css";
 
 import MessageBubble from "./MessageBubble";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function QuillChat() {
 
