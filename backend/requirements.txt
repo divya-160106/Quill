@@ -6,3 +6,4 @@ protobuf==4.25.3
 pydantic==2.13.4
 python-dotenv==1.2.2
 uvicorn==0.24.0
+sentence-transformers==3.0.1
