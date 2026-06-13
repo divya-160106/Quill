@@ -1,0 +1,19 @@
+SKILLS
+
+Programming Languages:
+Python, JavaScript, C, C++
+
+Frontend Development:
+React.js, HTML5, CSS3, Tailwind CSS, Vite, Figma
+
+Backend Development:
+Node.js, Express.js, REST APIs, JWT Authentication
+
+Databases:
+MongoDB, SQL, Firebase
+
+Core Computer Science:
+Data Structures & Algorithms (DSA), Object-Oriented Programming (OOPs), Operating Systems (OS), DBMS
+
+Tools & Libraries:
+Git, GitHub, Postman, Power BI, Python Selenium Library

@@ -1,0 +1,20 @@
+EXPERIENCE
+
+Software Developer Intern — DonutTech Private Limited (Chennai)
+20/08/2025 – 20/10/2025
+- Worked on Income Tax Return (ITR) Support Service Agent
+- Improved Chromium-based client-side performance
+- Built and optimized browser-level features
+- Collaborated with AI integration pipelines and engineering teams
+
+IoT Intern — Sortyx Ventures Private Limited (Chennai)
+21/07/2025 – 20/08/2025
+- Built dashboards for YuvaIOT e-commerce platform
+- Designed UI/UX assets including branding and catalogue
+- Worked with TTN data scraping and database integration
+- Supported smart bin automation systems and real-time workflows
+
+Additional Internships:
+- Android Developer Intern — Prodigy Infotech
+- Machine Learning Intern — Retech Solutions
+- UI/UX Designer Intern — TechVedhu

@@ -1,0 +1,38 @@
+PROJECTS
+
+1. Zozu Photobooth
+Tech Stack: React + Vite, Flask, Cloudinary, React Webcam, QR Code Generation
+- Webcam-based photo capture system
+- Themed filters and polaroid-style outputs
+- Cloud upload integration
+- QR-based photo sharing
+Description: A full-stack photobooth web application that brings physical photobooth experiences into the browser.
+
+2. Logistic AI
+Tech Stack: React, FastAPI, MongoDB, WebSockets, Leaflet.js, Reinforcement Learning
+- AI-powered route optimization
+- Interactive map visualization
+- Real-time logistics tracking
+- Reinforcement learning-based dispatch decisions
+Description: Intelligent logistics platform for optimizing delivery routes using AI.
+
+3. Aircraft Tracking System
+Tech Stack: Python, OpenCV, NumPy, SciPy
+- Aircraft detection in video streams
+- Velocity estimation
+- Trajectory prediction
+Description: Computer vision system for tracking and predicting aircraft motion.
+
+4. Fabric Type Classifier
+Tech Stack: Python, TensorFlow, Keras, ResNet50, OpenCV
+- Classifies Cotton, Wool, Rayon, Silk
+- Transfer learning with ResNet50
+- Image augmentation pipeline
+Description: Deep learning model for fabric classification using CNNs.
+
+5. Multimodal Emotion Analyzer
+Tech Stack: Python, OpenCV, FER, NLTK, VADER, Pandas, Matplotlib
+- Facial emotion detection
+- Text sentiment analysis
+- Multimodal fusion system
+Description: Emotion analysis system combining vision and NLP signals.

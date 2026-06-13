@@ -1,0 +1,5 @@
+ABOUT — DIVYASREE MANIKANDAN
+OVERVIEW
+Divyasree Manikandan is a Computer Science and Business Systems student and full-stack developer based in Chennai, India. She focuses on building modern web applications using React-based frontend systems, backend APIs, and AI/ML-integrated solutions. Her work blends software engineering, machine learning, UI/UX design, and creative problem-solving.
+
+She is actively involved in internships, technical projects, and multidisciplinary interests including literature, music, sports, and creative arts.
