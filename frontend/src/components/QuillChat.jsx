@@ -35,7 +35,7 @@ function QuillChat() {
     setLoading(true);
 
     try{
-
+      console.log("Sending to:", `${API_URL}/chat`);
       const response = await fetch(
         `${API_URL}/chat`,
         {
@@ -49,8 +49,10 @@ function QuillChat() {
         }
       );
 
-      const data = await response.json();
+      console.log("Status:", response.status);
 
+      const data = await response.json();
+      
       setMessages(prev => [
         ...prev,
         {
@@ -60,7 +62,7 @@ function QuillChat() {
       ]);
 
     }catch(error){
-
+      console.error("ERROR:", error);
       setMessages(prev => [
         ...prev,
         {
