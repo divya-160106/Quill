@@ -12,7 +12,7 @@ function QuillChat() {
     {
       role:"assistant",
       content:
-        "Hi. I'm Quill 🪶\n\nI know everything about Divyasree's projects, experience and skills.\n\nI'm also a writing assistant for plots, characters and worldbuilding."
+        "Hi. I'm Quill 🪶\n\nI know everything about Divyasree's projects, experience and skills.\n\nAsk anything you want to know about her!"
     }
   ]);
 
