@@ -14,14 +14,9 @@ HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/sentence-trans
 print("CURRENT WORKING DIR:", os.getcwd())
 print("DB PATH RESOLVED TO:", os.path.abspath(DB_PATH))
 
+#  HF INFERENCE API EMBEDDINGS (no local model load)
 
-# =========================
-# ✅ HF INFERENCE API EMBEDDINGS (no local model load)
-# =========================
 class HFInferenceEmbeddings:
-    """Drop-in replacement for HuggingFaceEmbeddings that calls the
-    HF Inference API instead of loading the model locally."""
-
     def __init__(self, api_url=HF_MODEL_URL, token=HF_API_TOKEN):
         self.api_url = api_url
         self.headers = {"Authorization": f"Bearer {token}"}
@@ -53,10 +48,8 @@ class HFInferenceEmbeddings:
     def embed_query(self, text):
         return self._call_api([text])[0]
 
+# SINGLETON EMBEDDING
 
-# =========================
-# ✅ SINGLETON EMBEDDING
-# =========================
 _embedding_model = None
 
 def get_embedding_model():
