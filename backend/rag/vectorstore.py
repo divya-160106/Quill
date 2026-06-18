@@ -1,12 +1,10 @@
 print("VECTORSTORE FILE LOADED")
-
 import os
 import time
 import requests
 from langchain_chroma import Chroma
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 DB_PATH = os.path.join(BASE_DIR, "chroma_db")
 COLLECTION_NAME = "quill_portfolio"
 
@@ -69,14 +67,10 @@ def get_embedding_model():
     return _embedding_model
 
 
-# =========================
-# VECTOR DB
-# =========================
 def get_vectorstore():
     print("CHROMA DB PATH:", DB_PATH)
     print("EXISTS:", os.path.exists(DB_PATH))
     print("COLLECTION NAME:", COLLECTION_NAME)
-
     return Chroma(
         persist_directory=DB_PATH,
         embedding_function=get_embedding_model(),

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./../styles/QuillChat.css";
 
 import MessageBubble from "./MessageBubble";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function QuillChat() {
 
@@ -34,9 +35,9 @@ function QuillChat() {
     setLoading(true);
 
     try{
-
+      console.log("Sending to:", `${API_URL}/chat`);
       const response = await fetch(
-        "http://localhost:8000/chat",
+        `${API_URL}/chat`,
         {
           method:"POST",
           headers:{
@@ -48,8 +49,10 @@ function QuillChat() {
         }
       );
 
-      const data = await response.json();
+      console.log("Status:", response.status);
 
+      const data = await response.json();
+      
       setMessages(prev => [
         ...prev,
         {
@@ -59,7 +62,7 @@ function QuillChat() {
       ]);
 
     }catch(error){
-
+      console.error("ERROR:", error);
       setMessages(prev => [
         ...prev,
         {
