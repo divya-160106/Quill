@@ -1,8 +1,7 @@
 import "../styles/MessageBubble.css";
 import ReactMarkdown from "react-markdown";
 
-function MessageBubble({role,content}){
-
+function MessageBubble({ role, content, isStreaming = false }) {
   return (
     <div className={`bubble ${role}`}>
       <ReactMarkdown
@@ -14,6 +13,7 @@ function MessageBubble({role,content}){
       >
         {content}
       </ReactMarkdown>
+      {isStreaming && <span className="cursor" aria-hidden="true" />}
     </div>
   );
 }

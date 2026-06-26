@@ -1,17 +1,14 @@
 from rag.vectorstore import get_vectorstore
 
-def retrieve_portfolio_context(query: str):
-    db = get_vectorstore()
+_db = None
 
-    print("DB INSTANCE:", id(db))
-    print("QUERY:", query)
+def get_db():
+    global _db
+    if _db is None:
+        _db = get_vectorstore()
+    return _db
 
-    results = db.similarity_search(query, k=9)
-
-    print("RESULTS COUNT:", len(results))
-
-    for r in results:
-        print("----")
-        print(r.page_content[:200])
-
+def retrieve_portfolio_context(query: str) -> str:
+    db = get_db()
+    results = db.similarity_search(query, k=4)  # was 9, 4 is plenty
     return "\n\n".join([r.page_content for r in results])

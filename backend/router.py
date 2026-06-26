@@ -1,5 +1,8 @@
 from llm import client
+import time
+import re
 
+GREETINGS = {"hi", "hello", "hey", "yo", "sup", "hii", "heyy", "good morning", "good evening", "helloo", "heyy", "hiiii"}
 def classify_query(message):
 
     portfolio_keywords = [
@@ -120,7 +123,11 @@ def classify_query(message):
             "divyasree",
         ]
 
-    msg = message.lower()
+    msg = message.lower().strip()
+    normalized = re.sub(r'(.)\1{2,}', r'\1\1', msg)  # 3+ repeats → 2
+    normalized = re.sub(r'(.)\1+', r'\1', normalized)  # then collapse to 1
+    if normalized in GREETINGS or msg in GREETINGS:
+            return "writer"
 
     # FAST PATH
     for word in portfolio_keywords:
@@ -149,6 +156,7 @@ portfolio
 - Interests and extracurriculars
 
 writer
+- General small talk with how may I assist you question
 - Story writing
 - Character creation
 - Plot analysis
@@ -167,7 +175,7 @@ or
 
 writer
 """
-
+    print("LLM ROUTER START:", time.time())
     try:
         response = client.chat.completions.create(
             model="deepseek/deepseek-chat-v3",
@@ -183,12 +191,10 @@ writer
         result = (
             response.choices[0].message.content or ""
         ).strip().lower()
-
         if result in ["portfolio", "writer"]:
             return result
 
     except Exception as e:
         print("Router error:", e)
 
-    # Safe fallback
     return "writer"

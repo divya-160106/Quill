@@ -1,0 +1,12 @@
+venv/
+env/
+__pycache__/
+*.pyc
+
+backend/rag/chroma_db/
+
+.env
+
+node_modules/
+
+*.log
