@@ -30,7 +30,8 @@ app.add_middleware(
     allow_origins=["http://localhost:5173", "https://quill-aiagent.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
+    expose_headers=["*"]
 )
 
 class ChatRequest(BaseModel):
@@ -96,7 +97,13 @@ async def chat(req: ChatRequest):
             print("OPENROUTER ERROR:", e)
             yield "Quill is temporarily unavailable."
 
-    return StreamingResponse(generate(), media_type="text/plain")
+    return StreamingResponse(generate(),
+        media_type="text/plain",
+        headers={
+            "X-Accel-Buffering": "no",
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive"
+        })
 
 # Health check (lets cron-job.org keep Render alive)
 @app.get("/")
