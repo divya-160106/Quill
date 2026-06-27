@@ -86,7 +86,8 @@ async def chat(req: ChatRequest):
                     {"role": "user",   "content": user_content}        # no duplicate prompt
                 ],
                 temperature=0.7,
-                stream=True
+                stream=True,
+                max_tokens = 450
             )
             for chunk in stream:
                 delta = chunk.choices[0].delta.content

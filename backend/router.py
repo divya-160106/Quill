@@ -185,7 +185,8 @@ writer
                     "content": prompt
                 }
             ],
-            temperature=0
+            temperature=0,
+            max_tokens = 5
         )
 
         result = (
