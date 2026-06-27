@@ -27,8 +27,6 @@ function QuillChat() {
     setMessages(prev => [...prev, userMessage]);
     setInput("");
     setLoading(true);
-
-    // Add an empty assistant message that we'll stream into
     setMessages(prev => [...prev, { role: "assistant", content: "" }]);
 
     try {
@@ -40,11 +38,10 @@ function QuillChat() {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       // Check if it's a streaming response or plain JSON
-      // (greetings and fallbacks from backend return JSON)
       const contentType = response.headers.get("content-type") || "";
 
       if (contentType.includes("application/json")) {
-        // Non-streamed fallback (greeting responses, error responses)
+        // Non-streamed fallback 
         const data = await response.json();
         setMessages(prev => [
           ...prev.slice(0, -1),

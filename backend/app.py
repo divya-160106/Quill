@@ -91,14 +91,14 @@ async def chat(req: ChatRequest):
             for chunk in stream:
                 delta = chunk.choices[0].delta.content
                 if delta:
-                    yield delta
+                    yield delta + ""
             print("LLM STREAM END:", time.time())
         except Exception as e:
             print("OPENROUTER ERROR:", e)
             yield "Quill is temporarily unavailable."
 
     return StreamingResponse(generate(),
-        media_type="text/plain",
+        media_type="text/event-stream",
         headers={
             "X-Accel-Buffering": "no",
             "Cache-Control": "no-cache",
