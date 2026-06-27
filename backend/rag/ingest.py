@@ -59,6 +59,13 @@ def split_sections(text):
 
     return sections
 
+def split_projects(content):
+    """Split a numbered project list into individual project chunks"""
+    import re
+    # split on "1. ", "2. ", "3. " etc
+    chunks = re.split(r'\n(?=\d+\.)', content.strip())
+    return [c.strip() for c in chunks if len(c.strip()) > 20]
+
 
 def ingest():
     raw_docs = load_docs()
@@ -70,6 +77,20 @@ def ingest():
 
         for section, content in sections.items():
             if len(content.strip()) < 20:
+                continue
+
+            if section == "PROJECTS":
+                project_chunks = split_projects(content)
+                for chunk in project_chunks:
+                    db.add_texts(
+                        texts=[chunk],
+                        metadatas=[{
+                            "section": "PROJECTS",
+                            "length": len(chunk),
+                            "type": "portfolio"
+                        }]
+                    )
+                    total += 1
                 continue
 
             db.add_texts(

@@ -1,5 +1,8 @@
 PROJECTS
 
+Projects and applications built by Divyasree. Her work includes web apps, 
+AI/ML systems, computer vision tools and full stack applications.
+
 1. Zozu Photobooth
 Tech Stack: React + Vite, Flask, Cloudinary, React Webcam, QR Code Generation
 - Webcam-based photo capture system
