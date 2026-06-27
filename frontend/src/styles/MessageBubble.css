@@ -32,6 +32,7 @@
 
 .bubble.assistant {
   align-self: flex-start;
+  text-align: left;
   background: rgba(27, 19, 45, 0.85);
   backdrop-filter: blur(4px);
   border: 2px solid #34234f;
@@ -74,6 +75,7 @@
 
 .bubble ul,
 .bubble ol {
+  text-align: left;
   margin: 6px 0 6px 22px;
 }
 
